@@ -1,5 +1,5 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM open jdk:17-jdk-alpine
 WORKDIR /app
-COPY . /app
-RUN javac helloworld.java
-CMD ["java", "helloworld"]
+COPY . /app 
+RUN javac HelloWorld.java
+CMD ["java", "HelloWorld"] 

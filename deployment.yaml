@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-deployment
+  labels:
+    app: helloworld
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: helloworld
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+        - name: helloworld-container
+          image: helloworld-java:latest   # Or your Docker Hub image: username/helloworld-java:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
